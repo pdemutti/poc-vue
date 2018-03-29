@@ -12,12 +12,15 @@ Certifique-se de ter instalado todos os pré-requisitos a seguir em sua máquina
 -   Node.js -  [Download and install Node.js](https://nodejs.org/en/download/);
 -   Vue Cli - [Instalar Vue Cli](https://www.npmjs.com/package/vue-cli)
 
+|  |  |
+|--|--|
+|  |  |
 
 ## Estrutura do projeto
 
-|                |                          |                         |
-|----------------|-------------------------------|-----------------------------|
-|/poc-vue|`Contem todos os arquivos do projeto`            |
-|./node_modules          |`Contains all dependencies fetched via [NPM](https://www.npmjs.org/). However, this directory is unnecessary for versioning, so it is ignored.`      
-|.gitignore          |`The .gitignore file specifies intentionally untracked files that Git should ignore.`
-|package.json          |`Lists all [Node.js](http://nodejs.org/) dependencies`
+|  |  |
+|--|--|
+| /poc-vue | `Contem todos os arquivos do projeto` |
+| ./node_modules | `Contem as dependencias buscado via \[NPM\](https://www.npmjs.org/). Esse diretório é desnecessário para o controle de versão, portanto, ele é ignorado.` |
+ | .gitignore |`The .gitignore file specifies intentionally untracked files that Git should ignore.` |
+ | package.json |`Lists all \[Node.js\](http://nodejs.org/) dependencies` |
