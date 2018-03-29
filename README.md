@@ -12,9 +12,6 @@ Certifique-se de ter instalado todos os pré-requisitos a seguir em sua máquina
 -   Node.js -  [Download and install Node.js](https://nodejs.org/en/download/);
 -   Vue Cli - [Instalar Vue Cli](https://www.npmjs.com/package/vue-cli)
 
-|  |  |
-|--|--|
-|  |  |
 
 ## Estrutura do projeto
 
