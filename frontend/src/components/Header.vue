@@ -1,19 +1,20 @@
 <template>
-  <v-toolbar>
-    <v-toolbar-side-icon></v-toolbar-side-icon>
-    <v-toolbar-title>Title</v-toolbar-title>
+  <v-toolbar class="toolbar">
+    <!-- <v-toolbar-side-icon></v-toolbar-side-icon> -->
+    <v-toolbar-title>
+      <img src="/static/img/logo.png" alt="logo">
+    </v-toolbar-title>
     <v-spacer></v-spacer>
     <v-toolbar-items class="hidden-sm-and-down">
-      <v-btn flat>Link One</v-btn>
-      <v-btn flat>Link Two</v-btn>
-      <v-btn flat>Link Three</v-btn>
+      <v-btn flat>Empresas</v-btn>
+      <v-btn flat>Estabelecimentos</v-btn>
+      <v-btn flat>Você</v-btn>
     </v-toolbar-items>
   </v-toolbar>
 </template>
 
 <script>
 export default {
-
   name: 'Header',
 
   data () {
@@ -24,5 +25,9 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
+  .toolbar {
+    background: #2e2f39;
+    color: #fff;
+  }
 </style>
