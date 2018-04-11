@@ -1,9 +1,9 @@
 <template>
-  <div id="app">
+  <v-app white id="app">
     <CcHeader />
     <router-view/>
     <CcFooter />
-  </div>
+  </v-app>
 </template>
 
 <script>
@@ -20,7 +20,18 @@ export default {
 </script>
 
 <style lang="scss">
+  $color-brown: #94873d;
+
   .card {
     background: #fff;
+  }
+  .text-uppercase {
+    text-transform: uppercase;
+  }
+  .color-brown {
+    color: $color-brown;
+  }
+  .background-brown {
+    background: $color-brown;
   }
 </style>

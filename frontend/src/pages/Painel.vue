@@ -11,8 +11,8 @@
         </v-flex>
       </v-layout>
 
-      <v-layout>
-        <v-flex xs4>
+      <v-layout wrap>
+        <v-flex xs5 pr-3>
           <CcExtrato />
         </v-flex>
 
