@@ -1,11 +1,11 @@
 <template>
   <v-toolbar class="toolbar">
-    <!-- <v-toolbar-side-icon></v-toolbar-side-icon> -->
+    <v-toolbar-side-icon></v-toolbar-side-icon>
     <v-toolbar-title>
       <img src="/static/img/logo.png" alt="logo">
     </v-toolbar-title>
     <v-spacer></v-spacer>
-    <v-toolbar-items class="hidden-sm-and-down">
+    <v-toolbar-items>
       <v-btn flat>Empresas</v-btn>
       <v-btn flat>Estabelecimentos</v-btn>
       <v-btn flat>Você</v-btn>
@@ -29,5 +29,9 @@ export default {
   .toolbar {
     background: #2e2f39;
     color: #fff;
+
+    .icon, button {
+      color: white;
+    }
   }
 </style>
