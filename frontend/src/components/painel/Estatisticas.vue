@@ -4,21 +4,41 @@
       <h3 class="text-uppercase color-brown">Estatisticas - Final 3800</h3>
     </v-card-title>
 
-    <v-layout row wrap class="pa-1">
+    <v-layout row wrap class="pl-3 pr-3">
+      <v-flex xs12>
+        <v-select
+          prepend-icon="event"
+          label="Filtrar por?"
+          v-model="diaSelecionado"
+          :items="dias"
+        ></v-select>
+      </v-flex>
+    </v-layout>
+
+    <v-layout row wrap class="pl-3 pr-3">
+      <v-flex xs12>
+        <v-radio-group v-model="radioGroup">
+          <v-radio
+            v-for="item in filtroDias"
+            :key="item"
+            :label="`${item}`"
+            :value="item"
+          ></v-radio>
+        </v-radio-group>
+      </v-flex>
+    </v-layout>
+
+    <v-layout row wrap class="pl-1 pr-1">
       <v-flex xs12 sm12>
-        <v-card class="background-dark-gray">
-          <v-card-title primary-title class="card-title">
-            <div>
-              <h3 class="headline mb-0">
-                <v-layout row wrap>
-                  <v-flex xs12 class="pa-1 box">
-                    <canvas class="canvas" ref="canvas" width="1100" height="1500"></canvas>
-                  </v-flex>
-                </v-layout>
-              </h3>
-            </div>
-          </v-card-title>
-        </v-card>
+        <div>
+          <h3 class="headline mb-0">
+            <v-layout row wrap>
+              <v-flex xs12 class="pl-1 pr-1 box">
+                <canvas class="canvas" ref="canvas" width="1100" height="1000"></canvas>
+              </v-flex>
+            </v-layout>
+          </h3>
+        </div>
       </v-flex>
     </v-layout>
 
@@ -30,16 +50,15 @@ import { Doughnut } from 'vue-chartjs'
 
 export default {
   extends: Doughnut,
-  // computed: {
-  //   chartData () {
-  //     return this.renderChart(this.data, this.chartOptions)
-  //   }
-  // },
   mounted () {
     this.renderChart(this.data, this.chartOptions)
   },
   data () {
     return {
+      filtroDias: ['Mais visitados', 'Por valores'],
+      radioGroup: 1,
+      diaSelecionado: '',
+      dias: ['30 dias', '3 meses', '1 ano'],
       data: {
         labels: ['Supermercado A', 'Supermercado B', 'Supermercado C', 'Outros'],
         datasets: [
