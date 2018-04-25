@@ -6,8 +6,8 @@
     </v-toolbar-title>
     <v-spacer></v-spacer>
     <v-toolbar-items>
-      <v-btn flat>Empresas</v-btn>
-      <v-btn flat>Estabelecimentos</v-btn>
+      <v-btn flat to="/">Painel</v-btn>
+      <v-btn flat to="/estabelecimentos">Estabelecimentos</v-btn>
       <v-btn flat>Você</v-btn>
     </v-toolbar-items>
   </v-toolbar>
@@ -30,7 +30,7 @@ export default {
     background: #2e2f39;
     color: #fff;
 
-    .icon, button {
+    .icon, button, a {
       color: white;
     }
   }

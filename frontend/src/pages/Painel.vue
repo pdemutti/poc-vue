@@ -26,10 +26,10 @@
 </template>
 
 <script>
-import CcVoce from '@/components/painel/Voce'
-import CcGuiaVR from '@/components/painel/GuiaVR'
-import CcExtrato from '@/components/painel/Extrato'
-import CcEstatisticas from '@/components/painel/Estatisticas'
+import CcVoce from '@/components/painel/voce/Index'
+import CcGuiaVR from '@/components/painel/guia_vr/Index'
+import CcExtrato from '@/components/painel/extrato/Index'
+import CcEstatisticas from '@/components/painel/estatisticas/Index'
 
 export default {
   name: 'Painel',
