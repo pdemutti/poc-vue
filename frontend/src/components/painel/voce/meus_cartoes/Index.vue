@@ -45,7 +45,7 @@ export default {
   },
   data: () => ({
     active: null,
-    menu: ['VR Alimentação', 'VR Refeição', 'VR Auto'],
+    menu: ['VR Alimentação', 'VR Refeição', 'VR Auto']
   })
 }
 </script>
