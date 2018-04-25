@@ -6,9 +6,8 @@
     </v-toolbar-title>
     <v-spacer></v-spacer>
     <v-toolbar-items>
-      <v-btn flat to="/">Painel</v-btn>
+      <v-btn flat to="/">Você</v-btn>
       <v-btn flat to="/estabelecimentos">Estabelecimentos</v-btn>
-      <v-btn flat>Você</v-btn>
     </v-toolbar-items>
   </v-toolbar>
 </template>
