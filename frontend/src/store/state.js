@@ -1,7 +1,11 @@
 export default {
   snackBar: {
-    show: false,
+    active: false,
     message: '',
-    color: ''
+    color: '',
+    mode: ''
+  },
+  modal: {
+    confirm: false
   }
 }

@@ -39,11 +39,11 @@
 
           <v-layout>
             <v-flex xs6 class="pr-2">
-              <v-btn large block depressed color="default" class="mx-0">Bloquear cartão</v-btn>
+              <v-btn large block depressed @click="blockCard()" color="default" class="mx-0">Bloquear cartão</v-btn>
             </v-flex>
 
             <v-flex xs6 class="pl-2">
-              <v-btn large block depressed color="default" class="mx-0">Alterar senha</v-btn>
+              <v-btn large block depressed @click="blockCard()" color="default" class="mx-0">Alterar senha</v-btn>
             </v-flex>
           </v-layout>
         </v-flex>
@@ -56,6 +56,11 @@
 <script>
 export default {
   name: 'VR-Alimentacao',
+  methods: {
+    blockCard () {
+      this.$store.commit('MODAL_CONFIRM', true)
+    }
+  },
   data: () => ({
 
   })

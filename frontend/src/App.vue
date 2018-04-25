@@ -1,5 +1,14 @@
 <template>
   <v-app white id="app">
+
+    <v-snackbar
+      :color="snackColor"
+      v-model="snackbar">
+      {{snackbarText}}
+    </v-snackbar>
+
+    <CcModalConfirm />
+
     <CcHeader />
     <transition name="fade" appear mode="out-in">
       <router-view/>
@@ -9,14 +18,27 @@
 </template>
 
 <script>
+import CcModalConfirm from '@/components/ModalConfirm'
 import CcHeader from '@/components/Header'
 import CcFooter from '@/components/Footer'
 
 export default {
   name: 'Beneficiario',
   components: {
+    CcModalConfirm,
     CcHeader,
     CcFooter
+  },
+  computed: {
+    snackbar () {
+      return this.$store.state.snackBar.active
+    },
+    snackbarText () {
+      return this.$store.state.snackBar.message
+    },
+    snackColor () {
+      return this.$store.state.snackBar.color
+    }
   }
 }
 </script>
