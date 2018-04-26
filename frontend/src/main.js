@@ -3,6 +3,8 @@ import Vuex from 'vuex'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import Vuetify from 'vuetify'
+import Vue2Filters from 'vue2-filters'
+
 import 'vuetify/dist/vuetify.min.css'
 
 import store from '@/store/store'
@@ -19,6 +21,7 @@ Vue.use(Vuetify, {
     error: '#b71c1c'
   }
 })
+Vue.use(Vue2Filters)
 Vue.config.productionTip = false
 
 new Vue({ // eslint-disable-line no-new

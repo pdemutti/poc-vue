@@ -24,11 +24,11 @@
         </v-tab-item>
 
         <v-tab-item key="tab2" id="VR Refeição">
-          <CcVrRefeicao />
+          <CcVrRefeicao :card="cardRefeicao" />
         </v-tab-item>
 
         <v-tab-item key="tab3" id="VR Auto">
-          <CcVrAuto />
+          <CcVrAuto :card="cardAuto" />
         </v-tab-item>
       </v-tabs>
 
@@ -37,6 +37,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 import api from '@/services/api'
 import CcVrAlimentacao from '@/components/painel/voce/meus_cartoes/VrAlimentacao'
 import CcVrRefeicao from '@/components/painel/voce/meus_cartoes/VrRefeicao'
@@ -52,6 +53,12 @@ export default {
   computed: {
     cardAlimentacao () {
       return this.$store.state.painel.voce.meusCartoes.alimentacao
+    },
+    cardRefeicao () {
+      return this.$store.state.painel.voce.meusCartoes.refeicao
+    },
+    cardAuto () {
+      return this.$store.state.painel.voce.meusCartoes.auto
     }
   },
   methods: {
@@ -59,17 +66,44 @@ export default {
       const vm = this
 
       vm.$data.loading = true
-      api.get('/myCards/alimentacao')
-        .then((result) => {
-          setTimeout(() => {
+      const getCardAlimentacao = () => {
+        api.get('/myCards/alimentacao')
+          .then((result) => {
             vm.$store.commit('PAINEL_VOCE_MEUS_CARTOES', result.data)
+          })
+          .catch((error) => {
             vm.$data.loading = false
-          }, 1500)
-        })
-        .catch((error) => {
+            console.log(error)
+          })
+      }
+
+      const getCardRefeicao = () => {
+        api.get('/myCards/refeicao')
+          .then((result) => {
+            vm.$store.commit('PAINEL_VOCE_MEUS_CARTOES', result.data)
+          })
+          .catch((error) => {
+            vm.$data.loading = false
+            console.log(error)
+          })
+      }
+
+      const getCardAuto = () => {
+        api.get('/myCards/auto')
+          .then((result) => {
+            vm.$store.commit('PAINEL_VOCE_MEUS_CARTOES', result.data)
+          })
+          .catch((error) => {
+            vm.$data.loading = false
+            console.log(error)
+          })
+      }
+
+      axios.all([getCardAlimentacao(), getCardRefeicao(), getCardAuto()]).then(axios.spread(function (acct, perms) {
+        setTimeout(() => {
           vm.$data.loading = false
-          console.log(error)
-        })
+        }, 1500)
+      }))
     }
   },
   mounted () {

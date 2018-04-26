@@ -9,7 +9,7 @@
         <v-flex class="pl-3 pt-4" xs6 justify-space-between>
           <v-layout row wrap>
             <v-flex xs12>
-              <h1>R$ {{card.balance}}</h1>
+              <h1>{{card.balance | currency('R$')}}</h1>
               <p>Saldo disponível</p>
             </v-flex>
 
@@ -34,7 +34,7 @@
 
         <v-flex xs12>
           <div class="mb-4 text-right">
-            <p>Ultimo benefício <b>R$ {{card.lastBenefit}}</b></p>
+            <p>Ultimo benefício <b>{{card.lastBenefit | currency('R$')}}</b></p>
           </div>
 
           <v-layout>

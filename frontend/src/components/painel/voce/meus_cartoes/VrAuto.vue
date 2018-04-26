@@ -3,18 +3,18 @@
     <v-container fill-height>
       <v-layout row wrap>
         <v-flex xs6 justify-space-between>
-          <img class="card-vr" src="/static/img/painel/meus_cartoes/card_auto.png" alt="">
+          <img class="card-vr-refeicao" src="/static/img/painel/meus_cartoes/card_auto.png" alt="">
         </v-flex>
 
         <v-flex class="pl-3 pt-4" xs6 justify-space-between>
           <v-layout row wrap>
             <v-flex xs12>
-              <h1>R$ 350,00</h1>
+              <h1>{{card.balance | currency('R$')}}</h1>
               <p>Saldo disponível</p>
             </v-flex>
 
             <v-flex xs12 justify-space-between>
-              <h1>A Confirmar</h1>
+              <h1>{{card.nextBenefit == '' ? 'A Confirmar' : card.nextBenefit}}</h1>
               <p>Próximo benefício</p>
             </v-flex>
           </v-layout>
@@ -22,7 +22,7 @@
 
         <v-flex xs12>
           <div class="bar-percents">
-            <p>2250%</p>
+            <p>{{card.percent}}%</p>
             <div class="percent"></div>
             <div class="percent-2"></div>
           </div>
@@ -34,16 +34,16 @@
 
         <v-flex xs12>
           <div class="mb-4 text-right">
-            <p>Ultimo benefício <b>R$ 1.000,00</b></p>
+            <p>Ultimo benefício <b>{{card.lastBenefit | currency('R$')}}</b></p>
           </div>
 
           <v-layout>
             <v-flex xs6 class="pr-2">
-              <v-btn large block depressed color="default" class="mx-0">Bloquear cartão</v-btn>
+              <v-btn large block depressed @click="blockCard()" color="default" class="mx-0">Bloquear cartão</v-btn>
             </v-flex>
 
             <v-flex xs6 class="pl-2">
-              <v-btn large block depressed color="default" class="mx-0">Alterar senha</v-btn>
+              <v-btn large block depressed @click="blockCard()" color="default" class="mx-0">Alterar senha</v-btn>
             </v-flex>
           </v-layout>
         </v-flex>
@@ -55,15 +55,23 @@
 
 <script>
 export default {
-  name: 'VR-Auto',
+  name: 'VR-Alimentacao',
+  methods: {
+    blockCard () {
+      this.$store.commit('MODAL_CONFIRM', true)
+    }
+  },
   data: () => ({
 
-  })
+  }),
+  props: {
+    card: Object
+  }
 }
 </script>
 
 <style lang="scss" scoped>
-  .card-vr {
+  .card-vr-refeicao {
     width: 100%;
   }
   .text-right {
