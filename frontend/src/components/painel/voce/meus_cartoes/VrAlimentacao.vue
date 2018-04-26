@@ -9,12 +9,12 @@
         <v-flex class="pl-3 pt-4" xs6 justify-space-between>
           <v-layout row wrap>
             <v-flex xs12>
-              <h1>R$ 350,00</h1>
+              <h1>R$ {{card.balance}}</h1>
               <p>Saldo disponível</p>
             </v-flex>
 
             <v-flex xs12 justify-space-between>
-              <h1>A Confirmar</h1>
+              <h1>{{card.nextBenefit == '' ? 'A Confirmar' : card.nextBenefit}}</h1>
               <p>Próximo benefício</p>
             </v-flex>
           </v-layout>
@@ -22,7 +22,7 @@
 
         <v-flex xs12>
           <div class="bar-percents">
-            <p>2250%</p>
+            <p>{{card.percent}}%</p>
             <div class="percent"></div>
             <div class="percent-2"></div>
           </div>
@@ -34,7 +34,7 @@
 
         <v-flex xs12>
           <div class="mb-4 text-right">
-            <p>Ultimo benefício <b>R$ 1.000,00</b></p>
+            <p>Ultimo benefício <b>R$ {{card.lastBenefit}}</b></p>
           </div>
 
           <v-layout>
@@ -63,7 +63,10 @@ export default {
   },
   data: () => ({
 
-  })
+  }),
+  props: {
+    card: Object
+  }
 }
 </script>
 

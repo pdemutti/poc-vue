@@ -7,5 +7,14 @@ export default {
   },
   modal: {
     confirm: false
+  },
+  painel: {
+    voce: {
+      meusCartoes: {
+        alimentacao: {},
+        refeicao: {},
+        auto: {}
+      }
+    }
   }
 }

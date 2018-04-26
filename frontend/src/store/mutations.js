@@ -10,5 +10,8 @@ export default {
     setTimeout(() => {
       state.snackBar.active = false
     }, payload.time)
+  },
+  'PAINEL_VOCE_MEUS_CARTOES' (state, payload) {
+    state.painel.voce.meusCartoes[payload.type] = payload
   }
 }

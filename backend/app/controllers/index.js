@@ -3,12 +3,12 @@
 module.exports = (app) => {
 
   const controller = {};
-  const MyCardsModel = app.models.myCards;
+  const AlimentacaoModel = app.models.cardAlimentacao;
   const ExtractsFinalModel = app.models.extractsFinal;
 
 
-  controller.listMyCards = (req, res) => {
-    res.status(200).json(MyCardsModel);
+  controller.getAlimentacao = (req, res) => {
+    res.status(200).json(AlimentacaoModel);
   };
 
   controller.listExtractsFinal = (req, res) => {
