@@ -55,7 +55,7 @@
 
 <script>
 export default {
-  name: 'VR-Alimentacao',
+  name: 'VR-Refeicao',
   methods: {
     blockCard () {
       this.$store.commit('MODAL_CONFIRM', true)

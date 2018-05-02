@@ -49,6 +49,7 @@
 import { Doughnut } from 'vue-chartjs'
 
 export default {
+  name: 'Estatisticas',
   extends: Doughnut,
   mounted () {
     this.renderChart(this.data, this.chartOptions)

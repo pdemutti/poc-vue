@@ -12,7 +12,7 @@ import App from './App'
 import router from './router'
 
 Vue.use(Vuex)
-Vue.use(axios, VueAxios)
+Vue.use(VueAxios, axios)
 Vue.use(Vuetify, {
   theme: {
     primary: '#3f51b5',

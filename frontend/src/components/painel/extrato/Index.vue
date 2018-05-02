@@ -38,7 +38,7 @@
 import api from '@/services/api'
 
 export default {
-  name: 'Voce',
+  name: 'Extratos',
   data: () => ({
     loading: false
   }),

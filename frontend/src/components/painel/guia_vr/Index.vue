@@ -15,7 +15,7 @@
 
 <script>
 export default {
-  name: 'Voce',
+  name: 'Guia-VR',
 
   data () {
     return {
