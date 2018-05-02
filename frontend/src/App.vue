@@ -46,6 +46,21 @@ export default {
 <style lang="scss">
   $color-brown: #94873d;
 
+  .loading-blocks {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    background: none rgba(0,0,0,0.5);
+
+    .loading-progress {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate3d(-50%, -50%, 0);
+    }
+  }
+
   .card {
     background: #fff;
   }

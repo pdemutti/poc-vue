@@ -13,5 +13,8 @@ export default {
   },
   'PAINEL_VOCE_MEUS_CARTOES' (state, payload) {
     state.painel.voce.meusCartoes[payload.type] = payload
+  },
+  'PAINEL_EXTRATOS_FINAIS' (state, payload) {
+    state.painel.extratosFinais.items = payload
   }
 }

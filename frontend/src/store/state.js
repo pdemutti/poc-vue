@@ -15,6 +15,9 @@ export default {
         refeicao: {},
         auto: {}
       }
+    },
+    extratosFinais: {
+      items: []
     }
   }
 }
